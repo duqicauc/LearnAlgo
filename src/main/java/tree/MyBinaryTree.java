@@ -7,7 +7,6 @@ public class MyBinaryTree {
 
     public static void main(String[] args) {
         Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer()
     }
 }
 

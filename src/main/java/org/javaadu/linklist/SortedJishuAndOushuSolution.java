@@ -1,4 +1,4 @@
-package linklist;
+package org.javaadu.linklist;
 
 public class SortedJishuAndOushuSolution {
 

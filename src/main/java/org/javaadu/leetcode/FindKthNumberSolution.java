@@ -1,3 +1,5 @@
+package org.javaadu.leetcode;
+
 public class FindKthNumberSolution {
 
     public static void main(String[] args) {

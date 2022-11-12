@@ -1,4 +1,4 @@
-package linklist;
+package org.javaadu.linklist;
 
 public class LinkedListTest {
     public static void main(String[] args) {

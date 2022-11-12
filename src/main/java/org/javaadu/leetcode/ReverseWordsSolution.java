@@ -1,3 +1,5 @@
+package org.javaadu.leetcode;
+
 public class ReverseWordsSolution {
     public static void main(String[] args) {
         System.out.println(reverseWords("  hello   world  "));

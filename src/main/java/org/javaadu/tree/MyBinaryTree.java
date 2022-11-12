@@ -1,4 +1,4 @@
-package tree;
+package org.javaadu.tree;
 
 import java.util.LinkedList;
 import java.util.Queue;

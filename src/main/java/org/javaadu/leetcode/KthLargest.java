@@ -2,6 +2,10 @@ package org.javaadu.leetcode;
 
 import java.util.PriorityQueue;
 
+/**
+ * 优先级队列，默认是小顶堆——堆顶的元素是堆中最小的元素，这里要求第K大的元素，
+ * 那么如果一个数比这个集合里最小的都小，那肯定不满足要求，否则它就可以替换掉这个堆顶元素
+ */
 public class KthLargest {
 
     public final PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
@@ -14,13 +18,12 @@ public class KthLargest {
         }
     }
 
-    //优先级队列，默认是小顶堆
-    //如果新加进来的元素比堆中最小的都小，那说明它一定挤不进前K大个元素
-    //如果新加进来的元素比堆中最小的都大，说明它至少可以替换掉这个最小的
     public int add(int val) {
         if (priorityQueue.size() < k) {
+            //如果堆中的元素不足k个，直接入队
             priorityQueue.offer(val);
         } else if (priorityQueue.peek() != null && priorityQueue.peek() < val) {
+            //如果堆顶元素比新来的元素小，说明新来的元素可以替换这个堆顶元素
             priorityQueue.poll();
             priorityQueue.offer(val);
         }
@@ -28,7 +31,7 @@ public class KthLargest {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[] {4, 3, 5, 8};
+        int[] nums = new int[]{4, 3, 5, 8};
         KthLargest kthLargest = new KthLargest(3, nums);
         System.out.println(kthLargest.add(10));
     }

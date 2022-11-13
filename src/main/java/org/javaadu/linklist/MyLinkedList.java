@@ -1,35 +1,37 @@
 package org.javaadu.linklist;
 
+import org.javaadu.common.ListNode;
+
 public class MyLinkedList {
 
     private int size;
-    private SingleListNode head;
+    private ListNode head;
 
     public MyLinkedList() {
         size = 0;
-        head = new SingleListNode(0);
+        head = new ListNode("-1");
     }
 
-    public int get(int index) {
+    public String get(int index) {
         if (index < 0 || index >= size) {
-            return -1;
+            return null;
         }
-        SingleListNode cur = head.next;
+        ListNode cur = head.next;
         for (int i = 0; i < index; i++) {
             cur = cur.next;
         }
         return cur.val;
     }
 
-    public void addAtHead(int val) {
+    public void addAtHead(String val) {
         addAtIndex(0, val);
     }
 
-    public void addAtTail(int val) {
+    public void addAtTail(String val) {
         addAtIndex(size, val);
     }
 
-    public void addAtIndex(int index, int val) {
+    public void addAtIndex(int index, String val) {
         if (index > size) {
             return;
         }
@@ -37,14 +39,14 @@ public class MyLinkedList {
             index = 0;
         }
 
-        SingleListNode pred = head;
-        SingleListNode cur = head.next;
+        ListNode pred = head;
+        ListNode cur = head.next;
         for (int i = 0; i < index; ++i) {
             pred = pred.next;
             cur = cur.next;
         }
 
-        SingleListNode toAdd = new SingleListNode(val);
+        ListNode toAdd = new ListNode(val);
         toAdd.next = cur;
         pred.next = toAdd;
 
@@ -56,8 +58,8 @@ public class MyLinkedList {
             return;
         }
 
-        SingleListNode pre = head;
-        SingleListNode cur = head.next;
+        ListNode pre = head;
+        ListNode cur = head.next;
         for (int i = 0; i < index; i++) {
             pre = pre.next;
             cur = cur.next;
@@ -69,7 +71,7 @@ public class MyLinkedList {
     }
 
     public void print() {
-        SingleListNode p = head.next;
+        ListNode p = head.next;
         while (p != null) {
             System.out.print(p.val + "\t");
             p = p.next;
@@ -78,11 +80,11 @@ public class MyLinkedList {
     }
 
     public void reverse() {
-        SingleListNode pre = null;
-        SingleListNode cur = head.next;
+        ListNode pre = null;
+        ListNode cur = head.next;
 
         while (cur != null) {
-            SingleListNode temp = cur.next;
+            ListNode temp = cur.next;
             cur.next = pre;
 
             //滑动窗口
@@ -92,15 +94,21 @@ public class MyLinkedList {
 
         head.next = pre;
     }
-}
 
-class SingleListNode {
+    public static void main(String[] args) {
+        MyLinkedList linkedList = new MyLinkedList();
+        linkedList.addAtHead("1");
+        linkedList.addAtTail("3");
+        linkedList.addAtIndex(2, "4"); //链表变为1->3->4
+        linkedList.addAtIndex(1, "2");   //链表变为1->2->3->4
+        linkedList.print();
+        System.out.println(linkedList.get(1));   //返回2
+        linkedList.deleteAtIndex(1);  //现在链表是1->3->4
+        linkedList.print();
+        System.out.println(linkedList.get(1)); //返回3
 
-    public int val;
-    public SingleListNode next;
-
-    public SingleListNode(int val) {
-        this.val = val;
-        next = null;
+        linkedList.print();
+        linkedList.reverse();
+        linkedList.print();
     }
 }

@@ -26,6 +26,7 @@ public class NChessBoard {
 
         for (int col = 0; col < n; col++) {
             if (isValid(row, col, n, chessBoard)) {
+                //如果chessBoard[row][col]目前还是合法的，才需要进行递归，否则是不合法的元素，直接忽略即可
                 //合法的才往下递归，不合法的在这里就去除掉了
                 chessBoard[row][col] = 'Q';
                 //递归判断下一行的

@@ -1,16 +1,7 @@
 package org.javaadu.tree;
 
-import java.util.LinkedList;
-import java.util.Queue;
+public class TreeNode {
 
-public class MyBinaryTree {
-
-    public static void main(String[] args) {
-        Queue<TreeNode> queue = new LinkedList<>();
-    }
-}
-
-class TreeNode {
     public int val;
     public TreeNode left;
     public TreeNode right;

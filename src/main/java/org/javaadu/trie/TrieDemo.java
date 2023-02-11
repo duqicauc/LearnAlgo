@@ -49,13 +49,12 @@ public class TrieDemo {
 
     public static void main(String[] args) {
         TrieDemo trieDemo = new TrieDemo();
-        trieDemo.insert("hello");
-        trieDemo.insert("he");
-        trieDemo.insert("see");
+        trieDemo.insert("策略");
+        trieDemo.insert("测试");
+        trieDemo.insert("哈哈");
         trieDemo.insert("is");
 
-        System.out.println(trieDemo.find("is"));
-        System.out.println(trieDemo.find("kdkdk"));
+        System.out.println(trieDemo.find("测试123"));
     }
 }
 

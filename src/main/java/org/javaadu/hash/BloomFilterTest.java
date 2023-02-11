@@ -1,4 +1,4 @@
-package org.javaadu.hashtable;
+package org.javaadu.hash;
 
 import cn.hutool.bloomfilter.BitMapBloomFilter;
 import cn.hutool.bloomfilter.BloomFilterUtil;

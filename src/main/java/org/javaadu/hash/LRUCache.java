@@ -1,6 +1,4 @@
-package org.javaadu.hashtable;
-
-import org.javaadu.queue.LinkQueue;
+package org.javaadu.hash;
 
 import java.util.HashMap;
 import java.util.Map;

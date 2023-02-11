@@ -1,4 +1,4 @@
-package org.javaadu.hashtable;
+package org.javaadu.hash;
 
 public class MyHashTable {
 

@@ -1,4 +1,4 @@
-package org.javaadu.trie;
+package org.javaadu.tree;
 
 public class TrieDemo {
     private TrieNode root = new TrieNode('/'); // 存储无意义字符

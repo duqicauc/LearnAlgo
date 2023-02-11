@@ -1,4 +1,4 @@
-package org.javaadu.keyword;
+package org.javaadu.string;
 
 import org.ahocorasick.trie.Emit;
 import org.ahocorasick.trie.Trie;

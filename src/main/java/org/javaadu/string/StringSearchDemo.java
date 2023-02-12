@@ -87,7 +87,7 @@ public class StringSearchDemo {
      * KMP算法的核心就在于：尽量利用之前已经匹配的结果，实现对主串的一次遍历
      * next[i]代表在pattern中的第i个字符在失配的时候可以跳过的字符个数
      * <p>
-     * 求解next数组，就是求解pattern中，各个子串的最长的相同前后缀的长度
+     * 求解next数组，就是求解pattern中，各个子串的最长的相同前后缀的长度，因此next[i]就是表示最长的相等前后缀的长度
      * <p>
      * 以模式串aabaaf为例，什么是前缀和后缀？
      * 前缀：只包含首字母，不包含尾字母的所有子串
@@ -132,22 +132,22 @@ public class StringSearchDemo {
         int i = 1;
 
         while (i < pattern.length()) {
+            //pattern[prefixLen]，表示目前最长相等子串的最后一位
+            //pattern[i]，表示目前正在处理的子串的最后一位的字符
             if (pattern.charAt(prefixLen) == pattern.charAt(i)) {
+                //如果它俩相等，说明找到了更长的相等子串
                 prefixLen++;
-                next[i] = prefixLen;
 
-                //处理下一个i的字符
-                i++;
+                next[i] = prefixLen;
+                i++;//处理下一个i的字符
             } else {
-                //这里prefixLen之前的都是已经计算完的，可以利用，看是否存在更短的最长相等前后缀
+                //如果不相等，则需要尝试下更短1位的子串是否满足要求，因此这里要把再次循环尝试下：仅仅改变prefixLen的值，不改变i的值
                 prefixLen = next[prefixLen - 1];
                 if (prefixLen == 0) {
-                    //如果没有合适的，则设置为0
+                    //如果实在没有合适的，则说明当前正在处理的子串的最长相等前后缀的长度是0
                     next[i] = 0;
-                    //处理下一个i的字符
-                    i++;
+                    i++;//处理下一个i的字符
                 }
-                //递推处理，这时候i是不变的
             }
         }
         return next;

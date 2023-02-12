@@ -4,9 +4,11 @@ import java.util.List;
 
 /**
  * <a href="https://oi-wiki.org/string/match/">字符串匹配</a>
- * <a href = "https://www.bilibili.com/video/BV1AY4y157yL/?spm_id_from=333.337.search-card.all.click&vd_source=33b7a49ff9ee993637d7533b74ed12a5">
+ * <a href="https://www.bilibili.com/video/BV1AY4y157yL/?spm_id_from=333.337.search-card.all.click&vd_source=33b7a49ff9ee993637d7533b74ed12a5">
  * 最浅显易懂的KMP算法
  * </a>
+ * <a href="https://www.bilibili.com/video/BV1PD4y1o7nd/?spm_id_from=333.788.recommend_more_video.-1&vd_source=33b7a49ff9ee993637d7533b74ed12a5">
+ *     代码随想录：帮你把KMP算法学个通透！（理论篇）</a>
  */
 public class StringSearchDemo {
 
